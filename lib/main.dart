@@ -10,9 +10,26 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        home:Scaffold(body: Center(
-          child: Text("Hellow World"),
-        ),
+        home:Scaffold(
+          body:Row(
+            children: [
+              Container(
+                height: double.infinity,
+                width: 100,
+                color: Colors.amber,
+              ),
+               Container(
+                height: 200.0,
+                width: double.infinity,
+                color: Colors.green,
+              ),
+               Container(
+                height: 200.0,
+                width: double.infinity,
+                color: Colors.pink,
+              ),
+          ],
+          ),
         ) ,
     );
   }
