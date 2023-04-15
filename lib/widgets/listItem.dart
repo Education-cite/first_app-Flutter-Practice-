@@ -17,7 +17,9 @@ class listItem extends StatelessWidget {
                   width: double.infinity,
                   height: 100.0,
                   color: c,
-                  child: Text(t),
+                  child: Center(child: 
+                  Text(t),
+                  ),
                 ),    
                 );
   }
