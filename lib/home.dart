@@ -1,17 +1,9 @@
-import 'package:first_app/home.dart';
+
+
+
 import 'package:first_app/provider/Counter_Provider.dart';
-import 'package:first_app/widgets/listItem.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-
-void main() {
-  runApp(MultiProvider(providers: [
-    ChangeNotifierProvider(create: (_)=>CounterProvider())
-  ],
-  child: Home(),
-  )
-  );
-}
 
 class Home extends StatelessWidget {
   const Home({super.key});
