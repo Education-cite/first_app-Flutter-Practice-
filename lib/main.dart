@@ -1,43 +1,53 @@
-import 'package:first_app/home.dart';
-import 'package:first_app/provider/Counter_Provider.dart';
 import 'package:first_app/widgets/listItem.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 
 void main() {
-  runApp(MultiProvider(providers: [
-    ChangeNotifierProvider(create: (_)=>CounterProvider())
-  ],
-  child: Home(),
-  )
-  );
+  runApp(MyApp());
 }
 
-class Home extends StatelessWidget {
-  const Home({super.key});
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        centerTitle: true,
-        title: Column(
-          children: [
-            Text("Provider")
-          ],
-        ),
-      ),
-      body: Center(
-        
-        child: Row(
-          
-          children: [
-            Text("counter value is ${context.watch<CounterProvider>().count}"),
-            FloatingActionButton(onPressed: (){context.read<CounterProvider>().incrementcount(); },child: Icon(Icons.add),),
-           FloatingActionButton(onPressed: (){},child: Icon(Icons.remove),),
-          ],
-        ),
-      ),
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: Scaffold(
+          appBar: AppBar(
+            title: Text("My First App"),
+            leading: Icon(Icons.search),
+            actions: [
+              Icon(Icons.alarm),
+              Icon(Icons.add),
+            ],
+          ),
+          floatingActionButton: FloatingActionButton(
+            onPressed: () {
+              print("hellow i am click");
+            },
+            child: Icon(Icons.add),
+          ),
+          body: Container(
+            width: double.infinity,
+            height: double.infinity,
+            child: ListView(
+              children: [
+                listItem(color:Colors.green,text:"Nayem"),
+                listItem(color:Colors.amber,text:"tawhide"),
+                listItem(color:Colors.pink,text:"tusi"),
+                listItem(color:Colors.red,text:"pinki"),
+                listItem(color:Colors.blue,text:"Enamul"),
+                listItem(color:Colors.black,text:"Enamul"),
+                listItem(color:Colors.yellow,text:"Enamul"),
+                listItem(color:Colors.green,text:"Enamul"),
+                listItem(color:Colors.amber,text:"Enamul"),
+                listItem(color:Colors.pink,text:"Enamul"),
+                listItem(color:Colors.red,text:"Enamul"),
+                listItem(color:Colors.blue,text:"Enamul"),
+              
+              ],
+            ),
+          )),
     );
   }
 }
