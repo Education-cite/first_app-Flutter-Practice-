@@ -26,7 +26,76 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
-      child: Scaffold(  
+      child: Scaffold( 
+        appBar: AppBar(
+          title: Center(
+            child: Text("Profile"
+            ),
+          ),
+          ), 
+          endDrawer: Drawer(
+            child: Container(
+              child: Column(
+                children: [
+                  Container(
+                    child: Stack(
+                      children: [
+                         Image.asset("assets/images/flower.jpg"),
+                         Positioned(
+                          left: 80,
+                          top: 50,
+                           child: CircleAvatar(
+                            radius: 50,
+                            backgroundImage: AssetImage("assets/images/rose.jpg"),
+                           ),
+                         ),
+                         Positioned(
+                          left: 190,
+                          top: 80,
+                          child: Text("Enamul Haque",style: TextStyle(color:Colors.red))),
+                         Positioned(
+                          left: 190,
+                          top: 100,
+                          child: Text("(Flutter Developer)",style: TextStyle(color:Colors.red)))
+                      ],
+                    ),
+                  ),
+                 ListTile(
+                  leading: Icon(Icons.person),
+                  title: Text("Profile"),
+                  trailing: Icon(Icons.arrow_forward_ios),
+                 ),
+                 Divider(
+                  thickness: 2,
+                  color: Colors.grey,
+                 ),
+                  ListTile(
+                  leading: Icon(Icons.notifications),
+                  title: Text("notifications"),
+                  trailing: Icon(Icons.arrow_forward_ios),
+                 ),
+                  Divider(
+                  thickness: 2,
+                  color: Colors.grey,
+                 ),
+                  ListTile(
+                  leading: Icon(Icons.settings),
+                  title: Text("setting"),
+                  trailing: Icon(Icons.arrow_forward_ios),
+                 ),
+                  Divider(
+                  thickness: 2,
+                  color: Colors.grey,
+                 ),
+                  ListTile(
+                  leading: Icon(Icons.logout),
+                  title: Text("LogOut"),
+                  trailing: Icon(Icons.arrow_forward_ios),
+                 ),
+                ],
+              ),
+            ),
+          ),
         backgroundColor: Colors.teal,
         body: Container(
           width: double.infinity,
