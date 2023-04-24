@@ -4,8 +4,24 @@ import 'package:first_app/screens/page_four.dart';
 import 'package:flutter/material.dart';
 
 class PageOne extends StatelessWidget {
+  bool isSwitchTraggle = false;
+
+
+void switchTragle(bool value){
+  if(value==false){
+    setState(){
+      isSwitchTraggle=true;
+    }
+  }else{
+    setState(){
+      isSwitchTraggle=false;
+    }
+  }
+}
+
+
   static final String path = "pageOne";
-  const PageOne({super.key});
+   PageOne({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -55,6 +71,15 @@ class PageOne extends StatelessWidget {
                 Navigator.push(context, route);
               },
               child: Text("Click Button"),
+            ),
+            Switch(
+              activeColor: Colors.green,
+              activeTrackColor: Colors.blue,
+              inactiveThumbColor: Colors.pink,
+              inactiveTrackColor: Colors.red,
+              value: isSwitchTraggle, onChanged: (value)=>switchTragle(value),
+
+            
             ),
           ],
           
