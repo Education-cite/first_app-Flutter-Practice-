@@ -10,10 +10,12 @@ class PageOne extends StatelessWidget {
 void switchTragle(bool value){
   if(isSwitchTraggle==false){
     setState(){
+      print("true");
       isSwitchTraggle=true;
     }
   }else{
     setState(){
+      print("false");
       isSwitchTraggle=false;
     }
   }
@@ -72,15 +74,55 @@ void switchTragle(bool value){
               },
               child: Text("Click Button"),
             ),
-            Switch(
-              activeColor: Colors.green,
-              activeTrackColor: Colors.blue,
-              inactiveThumbColor: Colors.pink,
-              inactiveTrackColor: Colors.red,
-              value: isSwitchTraggle, onChanged: (value)=>switchTragle(value),
-
             
+            Transform.scale(
+              scale: 2.0,
+
+              child: Switch(
+                
+                activeColor: Colors.green,
+                activeTrackColor: Colors.blue,
+                inactiveThumbColor: Colors.pink,
+                inactiveTrackColor: Colors.red,
+                value: isSwitchTraggle, onChanged:switchTragle,
+            
+              
+              ),
             ),
+            ElevatedButton(onPressed: (){
+              showDialog(context: context, builder: (BuildContext context){
+                  return AlertDialog(
+                    title: Text("Hellow"),
+                    titleTextStyle: TextStyle(color: Colors.red),
+                    content: Text("this is alert dialog"),
+                    actions: [
+                      TextButton(onPressed: (){
+                          Navigator.pop(context);
+                      }, child: Text("yes"),
+                      ),
+
+                       TextButton(onPressed: (){
+                           Navigator.pop(context);
+                      }, child: Text("No"),
+                      ),
+                    ],
+                  );
+              });
+            }, 
+            child: Text("Alert"),
+            ),
+           ElevatedButton(onPressed: (){
+            final snackBar = SnackBar(content: Text("Success"),
+            backgroundColor: Colors.teal,
+            action: SnackBarAction(
+              label: "Yes", 
+              textColor: Colors.white,
+            onPressed: (){
+
+            }),
+            );
+            ScaffoldMessenger.of(context).showSnackBar(snackBar);
+           }, child: Text("snackBar"))
           ],
           
         ),
