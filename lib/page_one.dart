@@ -8,7 +8,7 @@ class PageOne extends StatelessWidget {
 
 
 void switchTragle(bool value){
-  if(value==false){
+  if(isSwitchTraggle==false){
     setState(){
       isSwitchTraggle=true;
     }
