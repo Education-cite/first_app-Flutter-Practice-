@@ -4,8 +4,9 @@ import 'package:flutter/material.dart';
 
 class PageFour extends StatelessWidget {
     static final String path = "pageFour";
+   // List list = List<int>.generate(10, (i) => i+1);
 
-  const PageFour({super.key});
+   PageFour({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -27,16 +28,18 @@ class PageFour extends StatelessWidget {
               onPressed: (){
                // Navigator.pop(context);
              //  Navigator.popAndPushNamed(context, "/");
-            Navigator.popAndPushNamed(context, PageOne.path);
+         //   Navigator.popAndPushNamed(context, PageOne.path);
 
 
               },
              child: Text("Click Button"),
              ),
+           
           ],
             
         ),
       ),
+      
     );
   }
 }

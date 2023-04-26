@@ -29,9 +29,38 @@ class PageThree extends StatelessWidget {
               },
              child: Text("Click Button"),
              ),
+            //  GestureDetector(
+            //   onTap: (){
+            //     print("click");
+            //   },
+            //    child: Container(
+            //     color: Colors.amber,
+            //     height:200 ,
+            //     width: 200,
+            //    ),
+            //  ),
+
+            Material(
+              color: Colors.amber,
+              child: InkWell(
+                splashColor: Colors.green,
+                onTap: (){
+                  print("click");
+                },
+                 child: Container(
+                 // color: Colors.amber,
+                  height:200 ,
+                  width: 200,
+                  
+                 ),
+               ),
+            )
+             
           ],
+
         ),
       ),
+      
     );
   }
 }

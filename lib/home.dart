@@ -1,6 +1,4 @@
 
-
-
 import 'package:first_app/provider/Counter_Provider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';

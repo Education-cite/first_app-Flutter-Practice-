@@ -1,35 +1,52 @@
+
+
 import 'package:first_app/page_three.dart';
 import 'package:first_app/page_two.dart';
 import 'package:first_app/screens/page_four.dart';
 import 'package:flutter/material.dart';
 
-class PageOne extends StatelessWidget {
-  bool isSwitchTraggle = false;
+class PageOne extends StatefulWidget {
+  const PageOne({super.key});
 
+  @override
+  State<PageOne> createState() => _PageOneState();
+}
+
+class _PageOneState extends State<PageOne> {
+
+ bool isSwitchTraggle = false;
+ int count = 0;
+
+void _increment(){
+  setState(() {
+    count++;
+  });
+}
 
 void switchTragle(bool value){
   if(isSwitchTraggle==false){
-    setState(){
+    setState((){
       print("true");
       isSwitchTraggle=true;
-    }
+    });
   }else{
-    setState(){
+    setState((){
       print("false");
       isSwitchTraggle=false;
-    }
+    });
   }
 }
 
 
   static final String path = "pageOne";
-   PageOne({super.key});
+
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+
+ return Scaffold(
       appBar: AppBar(
-        title: Text("PageOne"),
+        title: Text("PageOne $count"),
         actions: [
           PopupMenuButton(onSelected: (value) {
             if(value=="pageone"){
@@ -127,6 +144,18 @@ void switchTragle(bool value){
           
         ),
       ),
+      floatingActionButton: FloatingActionButton(onPressed: _increment,
+      child: Icon(Icons.add),
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+
+      //  floatingActionButton: FloatingActionButton.extended(
+      //   onPressed: _increment,
+      // icon: Icon(Icons.add),
+      // label: Text("add"),
+      // backgroundColor: Colors.pink,
+      // ),
     );
   }
+  
 }
