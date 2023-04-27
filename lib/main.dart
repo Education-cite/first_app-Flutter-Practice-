@@ -174,11 +174,30 @@ TextEditingController textEditingController = TextEditingController();
           children: [
               TextField(
                 controller: textEditingController,
+                cursorColor: Colors.red,
+                
                 decoration: InputDecoration(
                   contentPadding: EdgeInsets.symmetric(vertical: 10,horizontal: 10),
-                  fillColor: Colors.grey,
+                  fillColor: Colors.black12,
                   filled: true,
-                  border: InputBorder.none
+                  hintText: "Enter your name",
+                  hintStyle: TextStyle(color: Colors.orange),
+                  labelText: "First Name",
+                  labelStyle: TextStyle(color: Colors.pink),
+                 // border: InputBorder.none, 
+                 border:OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(10)
+                  ),
+                  focusedBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(10),
+                    borderSide: BorderSide(color: Colors.red),
+                  ),
+                  enabledBorder:  OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(10),
+                    borderSide: BorderSide(color: Colors.red),
+                  ),
+                 prefixIcon: Icon(Icons.person),
+                 suffixIcon: Icon(Icons.arrow_upward),
                 ),
               )
       
