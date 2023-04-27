@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: "Home",
-      home: HomePage(),
+      home: FromPage(),
      //  home: PageOne(),
       // initialRoute: "/",
       // routes: {
@@ -146,5 +146,46 @@ class _TestState extends State<Test> {
                 );
               }),
             );
+  }
+}
+
+
+class FromPage extends StatefulWidget {
+
+
+  const FromPage({super.key});
+
+  @override
+  State<FromPage> createState() => _FromPageState();
+}
+
+class _FromPageState extends State<FromPage> {
+
+TextEditingController textEditingController = TextEditingController();
+
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: Text("FromPage"),),
+      body: Padding(
+        padding: EdgeInsets.all(20.0),
+        child: Column(
+          children: [
+              TextField(
+                controller: textEditingController,
+                decoration: InputDecoration(
+                  contentPadding: EdgeInsets.symmetric(vertical: 10,horizontal: 10),
+                  fillColor: Colors.grey,
+                  filled: true,
+                  border: InputBorder.none
+                ),
+              )
+      
+           ],     
+          
+           ),
+      ),
+    );
   }
 }
