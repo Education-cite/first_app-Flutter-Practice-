@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: "Home",
-      home: FromPage(),
+      home: Bottomsheet(),
      //  home: PageOne(),
       // initialRoute: "/",
       // routes: {
@@ -338,6 +338,116 @@ List<Color> color =[Colors.pink,Colors.red,Colors.amber,Colors.green];
           
       //      ),
       // ),
+    );
+  }
+}
+
+
+class Bottomsheet extends StatefulWidget {
+  const Bottomsheet({super.key});
+
+  @override
+  State<Bottomsheet> createState() => _BottomsheetState();
+}
+
+class _BottomsheetState extends State<Bottomsheet> {
+
+int? groupValue=0;
+bool checkboxval=false;
+Map<String,bool> item = {
+"book":false,
+"egg":false,
+"cat":false,
+"dog":false,
+
+};
+List<dynamic> list = ["pen","apple","mango","orange"];
+
+  @override
+  Widget build(BuildContext context) {
+
+    return Scaffold(
+          appBar: AppBar(title: Text("Bottomsheet"),
+          ),
+          body: Container(
+              width: double.infinity,
+              padding:EdgeInsets.only(bottom: 40),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  ...item.keys.map((e) {
+                    return Row(
+                      children: [
+                        Checkbox(
+                          value: item[e], 
+                          onChanged: (bool? value){
+                            setState(() {
+                              item[e]=value!;
+                            });
+                          }),
+                         // Text("${list[0]}")
+                          Text(e),
+                       //   ...list.map((index) => Text(list[index])),
+                          
+                      ],
+                    );
+                  })
+
+                  // Radio(
+                  //   value: 1,
+                  //  groupValue: groupValue,
+                  //  onChanged: (value){
+                  //     setState(() {
+                  //       groupValue=value;
+                  //     });
+                  //  }),
+                  //   Radio(
+                  //   value: 2,
+                  //  groupValue: groupValue,
+                  //  onChanged: (value){
+                  //     setState(() {
+                  //       groupValue=value;
+                  //     });
+                  //  }),
+                  //   Radio(
+                  //   value: 3,
+                  //  groupValue: groupValue,
+                  //  onChanged: (value){
+                  //     setState(() {
+                  //       groupValue=value;
+                  //     });
+                  //  }),
+                  //   Radio(
+                  //   value: 4,
+                  //  groupValue: groupValue,
+                  //  onChanged: (value){
+                  //     setState(() {
+                  //       groupValue=value;
+                  //     });
+                  //  }),
+
+                  
+                ],
+              ),
+          ),
+          // floatingActionButton: FloatingActionButton(onPressed: (){
+          //   showBottomSheet(
+          //     context: context, 
+          //     builder: (_){
+          //       return Container(
+          //         child: Column(
+          //           children: [
+          //             ListTile(
+          //               title: Text("Abc"),
+          //               leading: Icon(Icons.abc),
+          //             )
+          //           ],
+          //         ),
+          //       );
+          //     });
+          // },
+          // child: Icon(Icons.add),
+          // ),
     );
   }
 }

@@ -144,9 +144,7 @@ void switchTragle(bool value){
           
         ),
       ),
-      floatingActionButton: FloatingActionButton(onPressed: _increment,
-      child: Icon(Icons.add),
-      ),
+      
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
 
       //  floatingActionButton: FloatingActionButton.extended(
