@@ -1,5 +1,9 @@
 import 'package:first_app/page_three.dart';
 import 'package:first_app/page_two.dart';
+import 'package:first_app/widgets/AnimatedAlignment.dart';
+import 'package:first_app/widgets/animatedContainer.dart';
+import 'package:first_app/widgets/animitedBuilder.dart';
+import 'package:first_app/widgets/changeOpacity.dart';
 import 'package:first_app/widgets/routeAnimation.dart';
 
 import './page_one.dart';
@@ -18,7 +22,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: "Home",
-      home: Route1(),
+      home: animated_Builder(),
      //  home: PageOne(),
       // initialRoute: "/",
       // routes: {
