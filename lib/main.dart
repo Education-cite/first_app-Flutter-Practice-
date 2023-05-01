@@ -1,5 +1,6 @@
 import 'package:first_app/page_three.dart';
 import 'package:first_app/page_two.dart';
+import 'package:first_app/widgets/routeAnimation.dart';
 
 import './page_one.dart';
 import 'package:first_app/screens/page_four.dart';
@@ -17,7 +18,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: "Home",
-      home: Bottomsheet(),
+      home: Route1(),
      //  home: PageOne(),
       // initialRoute: "/",
       // routes: {
@@ -385,7 +386,7 @@ List<dynamic> list = ["pen","apple","mango","orange"];
                               item[e]=value!;
                             });
                           }),
-                         // Text("${list[0]}")
+                         // Text("${list[index]}")
                           Text(e),
                        //   ...list.map((index) => Text(list[index])),
                           
