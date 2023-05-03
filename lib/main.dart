@@ -1,3 +1,5 @@
+import 'package:first_app/Api_Crud/home.dart';
+import 'package:first_app/home.dart';
 import 'package:first_app/page_three.dart';
 import 'package:first_app/page_two.dart';
 import 'package:first_app/widgets/AnimatedAlignment.dart';
@@ -24,7 +26,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: "Home",
-      home: Google_Map(),
+      home: RestApiCrud(),
      //  home: PageOne(),
       // initialRoute: "/",
       // routes: {
