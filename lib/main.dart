@@ -12,6 +12,7 @@
 // import 'package:first_app/widgets/routeAnimation.dart';
 import 'package:first_app/provider/homePage.dart';
 import 'package:first_app/provider/setting_controller.dart';
+import 'package:first_app/provider/test_controller.dart';
 import 'package:provider/provider.dart';
 
 // import './page_one.dart';
@@ -27,10 +28,23 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ChangeNotifierProvider(
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider<SettingController>(
       create: (BuildContext context) {
         return SettingController();
       },
+      ),
+
+       ChangeNotifierProvider<TestController>(
+      create: (BuildContext context) {
+        return TestController();
+      },
+      ),
+
+
+      ],
+     
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
         title: "Home",
