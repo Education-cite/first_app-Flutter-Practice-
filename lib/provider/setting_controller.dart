@@ -12,6 +12,13 @@ notifyListeners();
 }
 
 
+void decrement(){
+_sizeCount--;
+notifyListeners();
+
+}
+
+
 
 
 

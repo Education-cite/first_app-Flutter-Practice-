@@ -34,7 +34,7 @@ class Setting extends StatelessWidget {
 
                ElevatedButton(
                 onPressed: (){
-
+                  settingController.decrement();
               }, child: Icon(
                 Icons.remove,
                 color: Colors.white,

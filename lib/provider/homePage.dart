@@ -4,14 +4,9 @@ import 'package:first_app/provider/setting_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-class MyHomePage extends StatefulWidget {
+class MyHomePage extends StatelessWidget {
   const MyHomePage({super.key});
 
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -46,18 +41,34 @@ class _MyHomePageState extends State<MyHomePage> {
           ],
         ),
       ),
-      body: Container(
-        child: Consumer<SettingController>(
-          builder: (context,settingController,child){
-          //  print(settingController.sizeCounter.toDouble());
-            return Text("Provider helps make your widgets as 'dumb' as possible by separating logic from the widgets, and injecting the important data to those widgets. If you're building an e-commerce app, you can build a cart page that knows it should display some items in a cart.",
-          style: TextStyle(
-            fontSize:  settingController.sizeCounter.toDouble() == 0.0 ? 20 : settingController.sizeCounter.toDouble(),
+      body: Column(
+        children: [
+          Container(
+            child: Consumer<SettingController>(
+              builder: (context,settingController,child){
+              //  print(settingController.sizeCounter.toDouble());
+                return Text("Provider helps make your widgets as 'dumb' as possible by separating logic from the widgets, and injecting the important data to those widgets. If you're building an e-commerce app, you can build a cart page that knows it should display some items in a cart.",
+              style: TextStyle(
+                fontSize:  settingController.sizeCounter.toDouble() == 0.0 ? 20 : settingController.sizeCounter.toDouble(),
+                ),
+              );
+              },
+              
             ),
-          );
-          },
-          
-        ),
+          ),
+
+          Container(
+            width: 300,
+            height: 100,
+            color: Colors.green,
+            child: Text("Enamul",
+            style: TextStyle(
+              fontSize: 20.0,
+
+            ),
+            ),
+          )
+        ],
       ),
     );
   }
